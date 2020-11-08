@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>새 할일</h2>
+  <form action="" method=post>
+    <p>
+      제목:
+      <input type=text name=title value="{{ request.form.title }}">
+    <p>내용:
+    <p><textarea name=text rows=10 cols=40>{{ request.form.text }}</textarea>
+    <p>
+      <input type=submit value="Create entry">
+      <a href="{{ url_for('show_all') }}">목록으로</a>
+  </form>
+{% endblock %}
