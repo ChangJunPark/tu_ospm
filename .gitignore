@@ -1,0 +1,7 @@
+
+docker02-wordpress/.docker-compose.yml.un~
+docker02-wordpress/docker-compose.yml~
+docker02-wordpress/mysql/.Dockerfile.un~
+*.un~
+*~
+docker02-wordpress/wp/
