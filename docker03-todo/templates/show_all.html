@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>All Items</h2>
+  <form action="{{ url_for('update_done') }}" method=post>
+    <table class=todos>
+      <tr>
+        <th>순번
+        <th>제목
+        <th>작성일
+        <th>완료
+      {%- for todo in todos %}
+      <tr class=title>
+        <td>{{ todo.id }}
+        <td>{{ todo.title }}
+        <td>{{ todo.pub_date.strftime('%Y-%m-%d %H:%M') }}
+        <td><input type=checkbox name=done.{{ todo.id }}{{ " checked" if todo.done }}>
+      <tr class=text>
+        <td colspan=3>{{ todo.text }}</td>
+      {%- endfor %}
+    </table>
+    <p>
+      <input type=submit value="새로고침">
+      <a href="{{ url_for('new') }}">새 항목</a>
+  </form>
+{% endblock %}

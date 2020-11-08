@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Todo List</title>
+<h1>Todo List</h1>
+{%- for category, message in get_flashed_messages(with_categories=true) %}
+  <p class="flask {{ category }}-flash">{{
+    "Error: " if category == 'error' }}{{ message }}</p>
+{%- endfor %}
+{% block body %}{% endblock %}
+<hr>
+<address>오픈소스를 활용한 프로젝트 관리</address>
